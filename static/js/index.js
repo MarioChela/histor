@@ -2,7 +2,7 @@
 
 function LED1_On() {
 	
-	document.getElementById("estado").src="/static/images/led_on.png";
+	document.getElementById("estado").src="/static/images/m1.JPG";
     message = new Paho.MQTT.Message("On");
     message.destinationName = "mchela.fie@unach.edu.ec/sensores";
     client.send(message);
@@ -10,7 +10,7 @@ function LED1_On() {
 }
 function LED1_Off(){	
 	
-	document.getElementById("estado").src="/static/images/led_off.png";
+	document.getElementById("estado").src="/static/images/m2.JPG";
     message = new Paho.MQTT.Message("off");
     message.destinationName = "mchela.fie@unach.edu.ec/sensores";
     client.send(message);
@@ -69,9 +69,9 @@ function LED1_Off(){
     SValue=message.payloadString.split(separador);
     document.getElementById("sensor").innerHTML=SValue[0];
     if(SValue[1]=="1"){
-    document.getElementById("estado").src="/static/images/led_on.png";
+    document.getElementById("estado").src="/static/images/m1.JPG";
 	}else if(SValue[1]=="0"){
-    document.getElementById("estado").src="/static/images/led_off.png";
+    document.getElementById("estado").src="/static/images/m2.JPG";
 	}
 
   }
